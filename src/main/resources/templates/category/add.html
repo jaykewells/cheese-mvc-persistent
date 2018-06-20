@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+
+    <div class="form-group">
+        <form action="/category/add" th:object="${category}" method="post">
+            <input type="text" th:field="*{name}"/>
+        <input type="submit"/>
+        </form>
+    </div>
+
+
+</body>
+</html>
