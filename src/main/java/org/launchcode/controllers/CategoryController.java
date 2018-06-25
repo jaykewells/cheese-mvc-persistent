@@ -41,7 +41,8 @@ public class CategoryController {
         if(!errors.hasErrors()) {
             categoryDao.save(category);
             model.addAttribute("title", "Add Category");
-            return "category";
+            model.addAttribute("categories", categoryDao.findAll());
+            return "category/index";
         }
         model.addAttribute("errors", errors);
         return "redirect:category/add";
